@@ -2,7 +2,10 @@ import { WebSocketServer } from "ws";
 import http from "http";
 
 const server = http.createServer((req, res) => {
-  res.writeHead(200, { "Content-Type": "text/plain" });
+  res.writeHead(200, {
+    "Content-Type": "text/plain",
+    "Access-Control-Allow-Origin": "*", // Allow all origins
+  });
   res.end("WebSocket server is running!");
 });
 
