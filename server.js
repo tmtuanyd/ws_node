@@ -26,12 +26,13 @@ wss.on("connection", (ws) => {
   ws.send(
     '{"page": "hatch_opened","message": "<message>", "event": "page_change"}'
   );
-  setInterval(async () => {
-    const randomTestValue = test[Math.floor(Math.random() * test.length)];
+
+  while (i < test.length) {
     ws.send(
-      `{"page": "${randomTestValue}","message": "This is error message", "event": "page_change"}`
+      `{"page": "${test[i]}","message": "<message>", "event": "page_change"}`
     );
-  }, 5000);
+    i++;
+  }
 });
 
 const PORT = process.env.PORT || 3000;
