@@ -26,12 +26,16 @@ wss.on("connection", (ws) => {
 
   let i = 0;
 
-  while (i < test.length) {
-    ws.send(
-      `{"page": "${test[i]}","message": "<message>", "event": "page_change"}`
-    );
-    i++;
-  }
+  const intervalId = setInterval(() => {
+    if (i < test.length) {
+      ws.send(
+        `{"page": "${test[i]}","message": "<message>", "event": "page_change"}`
+      );
+      i++;
+    } else {
+      clearInterval(intervalId);
+    }
+  }, 10000);
 });
 
 const PORT = process.env.PORT || 3000;
