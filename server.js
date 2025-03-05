@@ -25,7 +25,7 @@ wss.on("connection", (ws) => {
   console.log("Client connected");
 
   ws.send(
-    `{"page": "${test[0]}","message": "<message>", "event": "page_change"}`
+    `{"page": "${test[0]}", "message": "message from ws", "event": "page_change"}`
   );
 
   setTimeout(() => {
@@ -39,7 +39,7 @@ wss.on("connection", (ws) => {
   const intervalId = setInterval(() => {
     if (i < test.length) {
       ws.send(
-        `{"page": "${test[i]}","message": "<message>", "event": "page_change"}`
+        `{"page": "${test[i]}","message": "message from ws", "event": "page_change"}`
       );
       i++;
     } else {
