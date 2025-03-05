@@ -24,6 +24,10 @@ const test = [
 wss.on("connection", (ws) => {
   console.log("Client connected");
 
+  ws.send(
+    `{"page": "${test[0]}","message": "<message>", "event": "page_change"}`
+  );
+
   let i = 0;
 
   const intervalId = setInterval(() => {
