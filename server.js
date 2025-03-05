@@ -28,7 +28,7 @@ wss.on("connection", (ws) => {
     `{"page": "${test[0]}","message": "<message>", "event": "page_change"}`
   );
 
-  let i = 0;
+  let i = 1;
 
   const intervalId = setInterval(() => {
     if (i < test.length) {
