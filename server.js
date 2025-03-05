@@ -28,6 +28,12 @@ wss.on("connection", (ws) => {
     `{"page": "${test[0]}","message": "<message>", "event": "page_change"}`
   );
 
+  setTimeout(() => {
+    ws.send(
+      `{"class": "test class","reason": "test reason", "co2": "test co2", "event": "prediction"}`
+    );
+  }, 5000);
+
   let i = 1;
 
   const intervalId = setInterval(() => {
