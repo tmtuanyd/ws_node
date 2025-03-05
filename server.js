@@ -24,9 +24,7 @@ const test = [
 wss.on("connection", (ws) => {
   console.log("Client connected");
 
-  ws.send(
-    '{"page": "hatch_opened","message": "<message>", "event": "page_change"}'
-  );
+  let i = 0;
 
   while (i < test.length) {
     ws.send(
