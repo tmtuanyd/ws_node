@@ -18,6 +18,7 @@ const test = [
   "inserted",
   "error",
   "maintainance",
+  "admin",
 ];
 
 wss.on("connection", (ws) => {
